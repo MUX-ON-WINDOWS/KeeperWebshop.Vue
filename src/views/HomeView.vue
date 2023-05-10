@@ -5,9 +5,10 @@
       <div class="item" v-for="item in items" :key="item.id">
         <img class="img_class_homepage" :src="item.img || '@/assets/placeholder.png'" alt="keeperData">
         {{ item.name }}
-        <p>{{ item.old_price }}</p>
-        <p>{{ item.new_price }}</p>
-        <p>Card id is {{ item.id }}</p>
+        <div class="container_prices">
+          <p class="oldprice">{{ item.old_price }}</p>
+          <p class="newprice">{{ item.new_price }}</p>
+        </div>
         <button class="button_add_to_shop" @click="addToCart(item.id, item.name, item.img, item.new_price, item.old_price)">
           <div class="container_button">
             <p>Winkelwagen</p>
