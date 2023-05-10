@@ -61,14 +61,17 @@ export default {
           old_price: 20,
           new_price: 15
         }
-      ],
-      shoppingcart: []
+      ]
     }
   },
   methods: {
+    increment() {
+      this.$store.commit('increment');
+    },
     addToCart(itemId, itemName, itemImg, itemNewPrice, itemOldPrice) {
-      this.shoppingcart.push({ id: itemId, name: itemName, img: itemImg, new_price: itemNewPrice, old_price: itemOldPrice });
-      console.log(this.shoppingcart)
+      const item = { id: itemId, name: itemName, img: itemImg, new_price: itemNewPrice, old_price: itemOldPrice };
+      this.$store.commit('addToCart', item);
+      console.log(this.$store.state.shoppingcart);
       alert('Toegevoegd aan winkelwagen');
     }
   }
