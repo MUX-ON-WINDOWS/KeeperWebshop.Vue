@@ -19,8 +19,15 @@ import { RouterLink } from 'vue-router'
       </a>
       <div v-if="shoppingcart_box" class="shoppingcart_box">
         <li v-for="shoppingcart in shoppingCart" :key="shoppingcart.id">
-          {{ shoppingcart.name, shoppingcart.id }}
-          {{ shoppingcart.price }}
+          <div class="container_shopped_info">
+            <div class="img">
+              <img :src="shoppingcart.img" alt="keeperData">
+            </div>
+            <div class="container_shopping_cart_text">
+              <p>{{ shoppingcart.name }}</p>
+              <p>€{{ shoppingcart.new_price }}</p>
+            </div>
+          </div>
         </li>
       </div>
     </nav>
