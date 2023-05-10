@@ -65,14 +65,10 @@ export default {
     }
   },
   methods: {
-    increment() {
-      this.$store.commit('increment');
-    },
     addToCart(itemId, itemName, itemImg, itemNewPrice, itemOldPrice) {
       const item = { id: itemId, name: itemName, img: itemImg, new_price: itemNewPrice, old_price: itemOldPrice };
       this.$store.commit('addToCart', item);
       console.log(this.$store.state.shoppingcart);
-      alert('Toegevoegd aan winkelwagen');
     }
   }
 }
