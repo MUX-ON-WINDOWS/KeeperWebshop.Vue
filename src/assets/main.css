@@ -61,9 +61,19 @@ a,
   transition: 0.4s;
 }
 
+.shoppingcart_box {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  right: 0;
+  top: 65px;
+}
+
 .container_keeper_items {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .item {
@@ -90,6 +100,9 @@ a,
   background: #FEBD00;
   border: none;
   border-radius: 12px;
+}
+.button_add_to_shop:hover {
+  cursor: pointer;
 }
 .button_add_to_shop svg {
   height: 40px;
