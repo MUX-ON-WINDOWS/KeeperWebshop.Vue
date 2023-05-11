@@ -18,17 +18,23 @@ import { RouterLink } from 'vue-router'
         </div>
       </a>
       <div v-if="shoppingcart_box" class="shoppingcart_box">
-        <li v-for="shoppingcart in shoppingCart" :key="shoppingcart.id">
+        <div class="container_li">
+          <li v-for="shoppingcart in shoppingCart" :key="shoppingcart.id">
           <div class="container_shopped_info">
-            <div class="img">
-              <img :src="shoppingcart.img" alt="keeperData">
-            </div>
-            <div class="container_shopping_cart_text">
-              <p>{{ shoppingcart.name }}</p>
-              <p>€{{ shoppingcart.new_price }}</p>
+            <div class="container_data_shoppingcart">
+              <div class="container_product_info">
+                <img :src="shoppingcart.img" alt="keeperData">
+                <p>{{ shoppingcart.name }}</p>
+                <p>€{{ shoppingcart.new_price }}</p>
+              </div>
             </div>
           </div>
         </li>
+        </div>
+        <div class="container_check_and_total">
+          <p>Total: €{{ price }}</p>
+          <button class="btn_checkout">Checkout</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -45,12 +51,17 @@ import { RouterLink } from 'vue-router'
     computed: {
       shoppingCart() {
         console.log(this.$store.state.shoppingcart);
+        // console.log(this.shoppingCart.new_price);
+
         return this.$store.state.shoppingcart;
       }
   },
     methods: {
       openCart() {
         this.shoppingcart_box = !this.shoppingcart_box;
+        if (this.shoppingCart.length == 0) {
+          this.price = 0;
+        }
       }
     }
   }

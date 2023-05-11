@@ -1,6 +1,7 @@
 <template>
   <main>
     <img alt="Vue logo" class="banner_keeper" src="@/assets/keeper.png" width="125" height="125" />
+    <!-- cards created -->
     <div class="container_keeper_items">
       <div class="item" v-for="item in items" :key="item.id">
         <img class="img_class_homepage" :src="item.img || '@/assets/placeholder.png'" alt="keeperData">
