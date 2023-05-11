@@ -1,38 +1,43 @@
 [
   {
     "id": 1,
-    "name": "Keeperhandschoenen",
+    "name": "GripMaster",
     "img": "/src/assets/handschoenen.png",
-    "old_price": 20,
-    "new_price": 15
+    "old_price": "€50",
+    "new_price": "€35",
+    "klasse": "Basisklasse"
   },
   {
     "id": 2,
-    "name": "Keeperkleding",
+    "name": "DefendPro",
     "img": "/src/assets/handschoenen.png",
-    "old_price": 20,
-    "new_price": 15
+    "old_price": "€70",
+    "new_price": "€65",
+    "klasse": "Middenklasse"
   },
   {
     "id": 3,
-    "name": "Keeperonderhoud",
+    "name": "PowerSaves",
     "img": "/src/assets/handschoenen.png",
-    "old_price": 20,
-    "new_price": 15
+    "old_price": "€20",
+    "new_price": "€15",
+    "klasse": "Middenklasse"
   },
   {
     "id": 4,
-    "name": "Keeperaccessoires",
+    "name": "GoalKeeper Elite",
     "img": "/src/assets/handschoenen.png",
-    "old_price": 20,
-    "new_price": 15
+    "old_price": "€200",
+    "new_price": "€150",
+    "klasse": "Topklasse"
   },
   {
     "id": 5,
-    "name": "Keeperballen",
+    "name": "SureGrip",
     "img": "/src/assets/handschoenen.png",
-    "old_price": 20,
-    "new_price": 15
+    "old_price": "€20",
+    "new_price": "€15",
+    "klasse": "Middenklasse"
   }
 ]
 

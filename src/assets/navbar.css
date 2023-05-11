@@ -59,7 +59,7 @@ a,
 
 .container_shopped_info {
     display: flex;
-    align-content: space-between;
+    align-content: space-around;
 }
 
 .container_data_shoppingcart {

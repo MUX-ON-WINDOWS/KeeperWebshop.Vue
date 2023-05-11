@@ -1,8 +1,15 @@
-<script setup>
-</script>
-
 <template>
-  <main>
-    <p>Onderhoud page</p>
-  </main>
+  <div class="about">
+    <h1>Onderhoud page</h1>
+  </div>
 </template>
+
+<style>
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
