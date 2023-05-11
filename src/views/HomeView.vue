@@ -24,46 +24,12 @@
 </template>
 
 <script>
+import itemData from '../data/itemData.json'
+
 export default {
   data() {
     return {
-      items: [
-        {
-          id: 1,
-          name: 'Keeperhandschoenen',
-          img: '/src/assets/handschoenen.png',
-          old_price: 20,
-          new_price: 15
-        },
-        {
-          id: 2,
-          name: 'Keeperkleding',
-          img: '/src/assets/handschoenen.png',
-          old_price: 20,
-          new_price: 15
-        },
-        {
-          id: 3,
-          name: 'Keeperonderhoud',
-          img: '/src/assets/handschoenen.png',
-          old_price: 20,
-          new_price: 15
-        },
-        {
-          id: 4,
-          name: 'Keeperaccessoires',
-          img: '/src/assets/handschoenen.png',
-          old_price: 20,
-          new_price: 15
-        },
-        {
-          id: 5,
-          name: 'Keeperballen',
-          img: '/src/assets/handschoenen.png',
-          old_price: 20,
-          new_price: 15
-        }
-      ]
+      items: itemData
     }
   },
   methods: {
