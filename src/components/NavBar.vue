@@ -21,7 +21,7 @@ import { RouterLink } from 'vue-router'
       </a>
       <div v-if="shoppingcart_box" class="shoppingcart_box">
         <div class="container_li">
-          <div v-if="!shoppingCart.length">
+          <div class="shopping_empty" v-if="!shoppingCart.length">
             <p>Je hebt nog geen producten in je winkelwagen</p>
           </div>
           <li v-for="shoppingcart in shoppingCart" :key="shoppingcart.id">
@@ -30,7 +30,7 @@ import { RouterLink } from 'vue-router'
                 <div v-if="!shoppingcart.length" class="container_product_info">
                   <img :src="shoppingcart.img" alt="keeperData">
                   <p>{{ shoppingcart.name }}</p>
-                  <p>€{{ shoppingcart.new_price }}</p>
+                  <p>{{ shoppingcart.new_price }}</p>
                 </div>
               </div>
             </div>
@@ -57,22 +57,35 @@ export default {
   computed: {
     shoppingCart() {
       console.log(this.$store.state.shoppingcart);
-      // console.log(this.shoppingCart.new_price);
-
       return this.$store.state.shoppingcart;
     }
   },
   methods: {
     openCart() {
-      this.shoppingcart_box = !this.shoppingcart_box;
-      if (this.shoppingCart.length == 0) {
-        this.price = 0;
+        this.shoppingcart_box = !this.shoppingcart_box;
+        if (this.shoppingCart.length === 0) {
+          this.price = 0;
+        } else {
+          var total = 0; // Initialize total to 0
+          this.shoppingCart.forEach((shoppingcart) => {
+            function extractNumbers(str) {
+              var cleanStr = str.replace(/€/g, '');
+              var numbers = cleanStr.match(/\d+(\.\d+)?/g);
+              var numericValues = numbers.map(function(num) {
+                return parseFloat(num);
+              });
+              return numericValues;
+            }
+            var inputString = shoppingcart.new_price;
+            var result = extractNumbers(inputString);
+            result.forEach((num) => {
+              total += num;
+            });
+            console.log(total);
+          });
+          this.price = total;
+        }
       }
-      this.shoppingCart.forEach((shoppingcart) => {
-        this.price += shoppingcart.new_price;
-        console.log(this.price);
-      });
     }
   }
-}
 </script>
